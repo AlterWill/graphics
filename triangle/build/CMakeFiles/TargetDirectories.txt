@@ -1,3 +1,0 @@
-/home/alterwill/Github/graphics/triangle/build/CMakeFiles/tiny_renderer.dir
-/home/alterwill/Github/graphics/triangle/build/CMakeFiles/edit_cache.dir
-/home/alterwill/Github/graphics/triangle/build/CMakeFiles/rebuild_cache.dir

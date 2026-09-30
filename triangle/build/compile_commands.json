@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/alterwill/Github/graphics/triangle/build",
-  "command": "/usr/bin/c++  -I/home/alterwill/Github/graphics/triangle/include -std=gnu++20 -o CMakeFiles/tiny_renderer.dir/src/main.cpp.o -c /home/alterwill/Github/graphics/triangle/src/main.cpp",
-  "file": "/home/alterwill/Github/graphics/triangle/src/main.cpp",
-  "output": "CMakeFiles/tiny_renderer.dir/src/main.cpp.o"
-}
-]

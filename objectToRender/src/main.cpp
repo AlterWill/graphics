@@ -5,7 +5,7 @@
 #include "frame.hpp"
 
 int main() {
-  constexpr int WIDTH = 1800;
+  constexpr int WIDTH = 1000;
   constexpr int HEIGHT =1000;
 
   Image image(WIDTH, HEIGHT);

@@ -119,6 +119,7 @@ public:
     for(auto line : lines){
       drawLine(image, line.first, line.second, Colour(255,0,0));
     }
+    /*
     for (auto point : points) {
       std::cout << point.x << ' ' << point.y << ' ' << point.z << std::endl;
     }
@@ -127,5 +128,6 @@ public:
                 << linePair.second.x << ' ' << linePair.second.y << ' ' << linePair.second.z
                 << std::endl;
     }
+    */
   }
 };

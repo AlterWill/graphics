@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(SDL3 REQUIRED)
 
 add_executable(tiny_renderer
-    src/main.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
 
 target_include_directories(tiny_renderer PRIVATE

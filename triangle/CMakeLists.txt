@@ -12,7 +12,7 @@ add_executable(tiny_renderer
 )
 
 target_include_directories(tiny_renderer PRIVATE
-    include
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_link_libraries(tiny_renderer PRIVATE

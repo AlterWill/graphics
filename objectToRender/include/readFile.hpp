@@ -1,45 +1,48 @@
 #pragma once
 
-#include <iostream>
-#include <string>
+#include <filesystem>
 #include <fstream>
+#include <string>
 #include <vector>
 
-class ReadFile { // Renamed to PascalCase for standard C++ naming conventions
-private:
-    std::string path;
-    std::vector<std::string> contents;
-    bool validPath;
+class ReadFile {
+  std::filesystem::path filePath;
 
-public: // 1. Added public access specifier so you can actually use the class
-    
-    // 2. Used the 'path' argument instead of hardcoding "example.txt"
-    ReadFile(std::string filePath) : path(filePath), validPath(true) {
-        std::ifstream file(path);
-        
-        if (!file.is_open()) {
-            std::cerr << "Error: Could not open the file at " << path << std::endl;
-            validPath = false;
-            return; // 3. Stop execution early if file fails to open
-        }
-        
-        std::string line;
-        while (std::getline(file, line)) {
-            contents.push_back(line);
-        }
+public:
+  explicit ReadFile(std::filesystem::path path) : filePath(std::move(path)) {}
+
+  // Option 1: Read the file line by line
+  std::vector<std::string> readByLine() const {
+    std::vector<std::string> lines;
+    std::ifstream file(filePath);
+
+    if (!file.is_open()) {
+      return lines; // Returns empty vector if file fails to open
     }
 
-    // 4. Added 'const' to prevent modifying class data while reading contents
-    std::vector<std::string> getContent() const {
-        if (!validPath) {
-            return std::vector<std::string>{}; // Returns an empty vector if invalid
-        }
-        return contents;
+    std::string line;
+    while (std::getline(file, line)) {
+      lines.push_back(line);
     }
 
-    // 5. Cleaned up the destructor
-    ~ReadFile() {
-        // 'std::ifstream' closes itself automatically when it goes out of scope 
-        // inside the constructor. Destructors cannot return values.
+    return lines;
+  }
+
+  // Option 2: Read the file word by word (whitespace-delimited)
+  std::vector<std::string> readByWord() const {
+    std::vector<std::string> words;
+    std::ifstream file(filePath);
+
+    if (!file.is_open()) {
+      return words;
     }
+
+    std::string word;
+    while (file >> word) { // Automatically splits by spaces, tabs, and newlines
+      words.push_back(word);
+    }
+
+    return words;
+  }
+
 };

@@ -33,7 +33,13 @@ public:
     image.setPixel(C.x, C.y, Colour(0, 0, 255));
 
     drawLine(image, A, B, Colour(255, 0, 0));
+    drawLine(image, B, C, Colour(0, 255, 0));
+    drawLine(image, A, C, Colour(0, 0, 255));
+
+    /*
+    drawLine(image, A, B, Colour(255, 0, 0));
     drawLine(image, B, C, Colour(255, 255, 0));
     drawLine(image, A, C, Colour(255, 0, 255));
+    */
   }
 };

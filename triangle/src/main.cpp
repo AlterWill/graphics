@@ -45,7 +45,7 @@ int main()
     SDL_Texture* texture =
         SDL_CreateTexture(
             renderer,
-            SDL_PIXELFORMAT_RGBA8888,
+            SDL_PIXELFORMAT_ABGR8888,
             SDL_TEXTUREACCESS_STREAMING,
             image.getWidth(),
             image.getHeight()
